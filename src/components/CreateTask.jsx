@@ -1,22 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-function CreateTask(props) {
-    const {addItems}=props
-    const[task,setTask]=useState("")
-    function handleSubmit(e){
-      e.preventDefault()
-      addItems(task)
-      setTask("")
-    }
-    function handleChange(e){
-        setTask(e.target.value)
-    }
+function CreateTask({ addTask }) {
+  const [task, setTask] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addTask(task);
+    setTask("");
+  };
+
   return (
-      <form action="" onSubmit={handleSubmit}>
-      <input type="text" value={task} onChange={handleChange}/>
-      <button>Add Task</button>
-      </form>
-  )
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        autoFocus
+        placeholder="Enter a new task"
+      />
+      <button type="submit">Add Task</button>
+    </form>
+  );
 }
 
-export default CreateTask
+export default CreateTask;

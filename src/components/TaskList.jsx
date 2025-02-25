@@ -1,26 +1,27 @@
-import React from 'react'
-import TaskItems from './TaskItems'
-function TaskList(props) {
-  const {allList,deleteItem}=props
+import React from 'react';
+import TaskItem from "./TaskItems"
+function TaskList({ tasks, deleteTask, editTask, toggleTaskStatus }) {
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-           <th>Tasks</th> 
-           <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-        {
-        allList.map((item,index)=>{
-          return <TaskItems itemIs={item} key={index} deleteItem={deleteItem}/>
-        })
-        } 
-        </tbody>
-      </table>
-    </div>
-  )
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tasks.map((task, index) => (
+          <TaskItem
+            key={index}
+            task={task}
+            deleteTask={deleteTask}
+            editTask={editTask}
+            toggleTaskStatus={toggleTaskStatus}
+          />
+        ))}
+      </tbody>
+    </table>
+  );
 }
 
-export default TaskList
+export default TaskList;
