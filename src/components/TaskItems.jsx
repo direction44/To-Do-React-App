@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 function TaskItem({ task, deleteTask, editTask, toggleTaskStatus }) {
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(task.text);
@@ -20,13 +19,13 @@ function TaskItem({ task, deleteTask, editTask, toggleTaskStatus }) {
         {isEditing ? (
           <form onSubmit={handleEditSubmit}>
             <input type="text" value={newText} onChange={(e) => setNewText(e.target.value)} autoFocus />
-            <button type="submit">Save</button>
-            <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
+            <button type="submit" className='save-task'>Save</button>
+            <button type="button" onClick={() => setIsEditing(false)} className='back-task'>Cancel</button>
           </form>
         ) : (
           <>
-            <button onClick={() => setIsEditing(true)}>Edit</button>
-            <button onClick={() => deleteTask(task.text)}>Delete</button>
+            <button onClick={() => setIsEditing(true)} className='edit-task'>Edit</button>
+            <button onClick={() => deleteTask(task.text)} className='delete-task'>Delete</button>
           </>
         )}
       </td>

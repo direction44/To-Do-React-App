@@ -1,159 +1,159 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #FF5733, #FFD700);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #FFE4E9, #E6DFF0, #DDEFFF, #FFFDE7);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #8B0000;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Form */
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #FF69B4; /* Soft Pink Border */
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  background: linear-gradient(135deg, #FFF0F5, #E6F7FF);
+  /* Very Light Pink → Very Light Blue */
   }
-  
-  h1 {
-    text-align: center;
-    color: #8B0000;
-  }
-  
-  /* Container */
+
+input[type="text"]:focus {
+  border-color: #D8BFD8; /* Light Purple Border on Focus */
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(216, 191, 216, 0.5);
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 14px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Different Button Colors */
+button.add-task {
+  background-color: #28a745;
+  color: white;
+}
+
+button.add-task:hover {
+  background-color: #218838;
+}
+
+button.edit-task {
+  background-color: #808080;
+  color: white;
+}
+
+button.edit-task:hover {
+  background-color: #696969; /* Warm Amber */
+}
+
+button.delete-task {
+  background-color: #808080;
+  color: white;
+}
+
+button.delete-task:hover {
+  background-color: #696969;
+}
+
+button.save-task {
+  background-color: #17a2b8;
+  color: white;
+}
+
+button.save-task:hover {
+  background-color: #138496;
+}
+
+button.back-task {
+  background-color: #17a2b8;
+  color: white;
+}
+
+button.back-task:hover {
+  background-color: #138496;
+}
+
+/* Task List */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 10px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #FFFAF0;
+}
+
+/* Task Items */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #138496;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-item.completed span {
+  text-decoration: line-through;
+  color: #8B0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .container {
-    width: 90%;
-    max-width: 600px;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    width: 95%;
   }
-  
-  /* Form */
+
   form {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-direction: column;
   }
-  
-  input[type="text"] {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #FF4500;
-    border-radius: 8px;
-    font-size: 16px;
-    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-    background: #FFFACD;
-  }
-  
-  input[type="text"]:focus {
-    border-color: #FF6347;
-    outline: none;
-    box-shadow: 0px 0px 8px rgba(255, 99, 71, 0.5);
-  }
-  
-  button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    font-size: 14px;
-  }
-  
-  button:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Different Button Colors */
-  button.add-task {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  button.add-task:hover {
-    background-color: #218838;
-  }
-  
-  button.edit-task {
-    background-color: #fd7e14;
-    color: white;
-  }
-  
-  button.edit-task:hover {
-    background-color: #e8590c;
-  }
-  
-  button.delete-task {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  button.delete-task:hover {
-    background-color: #c82333;
-  }
-  
-  button.save-task {
-    background-color: #17a2b8;
-    color: white;
-  }
-  
-  button.save-task:hover {
-    background-color: #138496;
-  }
-  
-  button.back-task {
-    background-color: #6c757d;
-    color: white;
-  }
-  
-  button.back-task:hover {
-    background-color: #5a6268;
-  }
-  
-  /* Task List */
-  table {
+
+  input[type="text"], button {
     width: 100%;
-    border-collapse: collapse;
   }
-  
-  td, th {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #FFFAF0;
-  }
-  
-  /* Task Items */
-  .task-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #FF4500;
-  }
-  
-  .task-item input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .task-item.completed span {
-    text-decoration: line-through;
-    color: #8B0000;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .container {
-      width: 95%;
-    }
-  
-    form {
-      flex-direction: column;
-    }
-  
-    input[type="text"], button {
-      width: 100%;
-    }
-  }
-  
+}

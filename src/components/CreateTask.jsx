@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 function CreateTask({ addTask }) {
   const [task, setTask] = useState("");
 
@@ -18,7 +17,7 @@ function CreateTask({ addTask }) {
         autoFocus
         placeholder="Enter a new task"
       />
-      <button type="submit">Add Task</button>
+      <button type="submit" className='add-task'>Add Task</button>
     </form>
   );
 }

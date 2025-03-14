@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import CreateTask from './CreateTask';
 import TaskList from './TaskList';
-
 function MainTask() {
   const [taskList, setTaskList] = useState([]);
 
